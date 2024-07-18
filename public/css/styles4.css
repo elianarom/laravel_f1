@@ -1,0 +1,466 @@
+:root {
+    --bg-body:#F2F2F2;
+    --primary-color:#2D519F;
+    --fontSize-tittle: 40px;
+    --fontSize-parrafos: 20px;
+}
+
+html, body, #app {
+    height: 100%;
+    font-family: "Ubuntu", sans-serif;
+}
+
+#app {
+    display: grid;
+    grid-template-rows: 56px 1fr 100px;
+}
+
+/*BARRA DE MENU*/
+
+nav.barra-menu {
+    padding-top: 30px;
+    /*padding-left: 5%;
+    padding-right: 5%;*/
+}
+
+nav.barra-menu .navbar-brand {
+    margin-right: 50px;
+}
+
+nav.barra-menu ul li a {
+    color: #191D32;
+    position: relative;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+nav.barra-menu ul li a::after {
+    width: 0;
+    height: 3px;
+    background: #2D519F;
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    transition: .4s;
+}
+
+nav.barra-menu ul li a:hover {
+    color: #2D519F;
+}
+
+nav.barra-menu ul li a:hover::after {
+    color: #2D519F;
+    width: 40%;
+}
+
+nav.barra-menu ul li.login {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: end;
+}
+
+nav.barra-menu ul li.login a {
+    display: block;
+    padding: 10px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    color: white;
+    background: #2D519F;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+nav.barra-menu ul li.login a:hover::after {
+    background: #191D32;
+}
+
+nav.barra-menu ul li.login a:hover {
+    background: #191D32;
+}
+
+button.nav-link.mx-2 {
+    background:#191D32;
+    font-weight: 600;
+    color:#F2F2F2;
+    padding-top: 17px;
+    border-radius: 10px;
+}
+
+/*HOME MAIN*/
+#header {
+    padding: 160px 15%;
+    background-image: url('./../asset/shape1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#header h1 {
+    color: #191D32;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+#header a.btn-buscar {
+    padding: 10px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    color: white;
+    background:#191D32;
+    border-radius: 10px;
+    transition: .4s;
+    border: none;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#header a.btn-buscar:hover {
+    background: #2D519F;
+}
+
+#section-categorias {
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+}
+
+#section-categorias div h2 {
+    color: #191D32;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
+#section-categorias div p {
+    color: #191D32;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#section-categorias .row {
+    margin-top: 20px;
+}
+
+#section-categorias .card-categorias {
+    height: 100%;
+    background: #2D519F;
+    border-radius: 20px;
+    position: relative;
+    padding: 30px 20px ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    text-align: center;
+}
+
+#section-categorias .card-categorias img {
+    background: #FFF;
+    width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    left: 20px;
+}
+
+#section-categorias .card-categorias h3 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 15px;
+}
+
+#section-categorias .card-categorias a {
+    margin-top: 40px;
+    padding: 10px;
+    color:#191D32;
+    background:#F2F2F2;
+    border-radius: 10px;
+    transition: .4s;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#section-categorias .card-categorias a:hover {
+    color:#F2F2F2;
+    background:#191D32;
+}
+
+/*SECTION HERRAMIENTAS*/
+#section-herramientas {
+    background-image: url('./../asset/shape1.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+#section-herramientas .banner-herramientas h1 {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#section-herramientas .banner-herramientas p {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: #2D519F;
+    font-size: 23px;
+}
+
+#section-herramientas .card {
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    color: #191D32;
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#section-herramientas .card .btn-categoria {
+    padding: 5px;
+    color: #2D519F;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.icon-btn {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: .25s ease;
+    box-shadow: 0 0 0 1px rgba(#000, .05), 0 3px 8px 0 rgba(#000, .15);
+    z-index: 1;
+    cursor: pointer;
+    color: #565656;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+    &:hover, &:focus {
+      background-color: #EC4646;
+      color: #FFF;
+    }
+  }
+
+#section-herramientas .card .card-title {
+    color: #191D32;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+#section-herramientas .card .card-text {
+    color: #2D519F;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#section-herramientas .card .btn-detalles {
+    color: #F2F2F2;
+    background: #2D519F;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#section-herramientas .card .btn-detalles:hover {
+    color: #F2F2F2;
+    background: #191D32;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*VISTA HERRAMIENTA*/
+#vista-herramienta nav {
+    margin-top: 40px;
+}
+
+#vista-herramienta nav ol li a {
+    color: #191D32;
+    font-weight: 500;
+}
+
+#vista-herramienta nav ol li:last-child {
+    color:#2D519F;
+    font-weight: 400;
+}
+
+#vista-herramienta .row {
+    margin-top: 50px;
+}
+
+#vista-herramienta .categoria {
+    padding-top: 20px;
+    color: #2D519F;
+    font-size: 16px;
+}
+
+#vista-herramienta h1 {
+    color: #191D32;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#vista-herramienta .propietario {
+    color: #2D519F;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#vista-herramienta .descripcion {
+    color: #191D32;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#vista-herramienta .precio {
+    color: #191D32;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/*SECTION REVIEW*/
+#section-review {
+    background-image: url('./../asset/shape1.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+#section-review .banner-herramientas h1 {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#section-review .card {
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    color: #191D32;
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#section-review .card .card-title {
+    color: #191D32;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#section-review .card .card-text {
+    color:#565656;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#section-review #form label {
+    font-size: 40px;
+  }
+
+#section-review input[type="radio"] {
+    display: none;
+  }
+
+#section-review label {
+    color: grey;
+  }
+
+#section-review .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: left;
+    font-size: 20px;
+  }
+
+#section-review label:hover,
+  label:hover ~ label {
+    color:#2D519F;
+  }
+
+#section-review input[type="radio"]:checked ~ label {
+    color:#2D519F;
+  }
+
+/*SECTION HERRAMIENTAS ADMIN*/
+#section-herramientas-admin div.banner-herramientas-admin {
+    background: #2D519F;
+    margin-top: 50px;
+    padding: 40px 20px;
+    border-radius: 20px;
+}
+
+#section-herramientas-admin div.banner-herramientas-admin h1 {
+    color: #F2F2F2;
+}
+
+#section-herramientas-admin div.banner-herramientas-admin p {
+    color: #F2F2F2;
+    font-size: 16px;
+}
+
+#section-herramientas-admin div.banner-herramientas-admin .btn-crear {
+    padding: 10px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    color: #191D32;
+    background:#F2F2F2;
+    border-radius: 10px;
+    transition: .4s;
+    border: none;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#section-herramientas-admin div.banner-herramientas-admin .btn-crear:hover {
+    background: #191D32;
+    color: #F2F2F2;
+}
+
+/*ADMIN EDITAR*/
+#vista-herramienta form .btn-detalles {
+    color: #F2F2F2;
+    background: #2D519F;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#vista-herramienta form .btn-detalles:hover {
+    color: #F2F2F2;
+    background: #191D32;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*LOGIN*/
+.login .card {
+    background: #2D519F;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #191D32;
+    color: #fff;
+}
+
+.footer p {
+    margin-bottom: 0;
+}

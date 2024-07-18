@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Formula1-Bold';
+        src: url(/public/fonts/Formula1-Bold.otf) format('otf');
+    }
+    @font-face {
+        font-family: 'Formula1-Regular';
+        src: url(/public/fonts/Formula1-Regular.otf) format('otf');
+    }
+}
