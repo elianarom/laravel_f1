@@ -61,7 +61,7 @@
                         @else
                             <li>
                                 <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
-                                    href="{{ route('admin.dashboard') }}">Mi Perfil</a>
+                                    href="{{ route('usuarios.vista', auth()->user()->user_id) }}">Mi Perfil</a>
                             </li>
                         @endif
                             <li>
