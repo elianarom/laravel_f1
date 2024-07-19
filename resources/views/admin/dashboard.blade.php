@@ -35,7 +35,7 @@
                         </div>
                     </div>
 
-                    <div class="p-6 px-0 overflow-scroll">
+                    <div class="p-6 px-0">
                         <table class="w-full text-left table-auto min-w-max">
                             <thead>
                                 <tr>

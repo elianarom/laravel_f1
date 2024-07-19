@@ -80,7 +80,7 @@
 
     <main>
         @if (session()->has('mensaje'))
-            <div class="ml-10 mr-10 flex items-center p-4 mb-4 rounded-xl text-sm border border-emerald-400 bg-emerald-50 text-emerald-500" {{ session()->get('feedback.type', 'success') }} role="alert">
+            <div class="ml-10 mr-10 flex items-center p-4 mb-4 rounded-xl text-sm border" {{ session()->get('feedback.type', 'success') }} role="alert">
              {!! session()->get('mensaje') !!}
             </div>
             <!--<div class="alert alert-{{ session()->get('feedback.type', 'success') }}">{!! session()->get('mensaje') !!}</div>-->

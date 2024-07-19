@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Noticia;
+use App\Models\Suscripcion;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,9 @@ class UserController extends Controller
 
     public function registroUsuario()
     {
-        return view('usuarios.crearUsuario');
+        return view('usuarios.crearUsuario', [
+            'suscripciones' => Suscripcion::all()
+        ]);
     }
 
     public function registroProceso(Request $request)
@@ -49,6 +52,7 @@ class UserController extends Controller
             'apellido' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'suscripcion_fk' => 'required',
         ]);
 
         $user = User::create([
@@ -56,6 +60,7 @@ class UserController extends Controller
             'apellido'=> $input['apellido'],
             'email' => $input['email'],
             'password' => \Hash::make($input['password']),
+            'suscripcion_fk' => $input['suscripcion_fk']
         ]);
 
         return redirect()
@@ -67,6 +72,7 @@ class UserController extends Controller
     {
         return view('usuarios.editarUsuario', [
             'usuario' => User::findOrFail($id),
+             'suscripciones' => Suscripcion::all()
         ]);
     }
 
@@ -77,9 +83,10 @@ class UserController extends Controller
             'apellido' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'suscripcion_fk' => 'required'
         ]);
 
-        $input = $request->only(['nombre', 'apellido', 'email', 'password']);
+        $input = $request->only(['nombre', 'apellido', 'email', 'password', 'suscripcion_fk']);
 
         $usuario = User::findOrFail($id);
 

@@ -121,7 +121,7 @@
                         </table>
                         @else
                         <p>Actualmente no tenes paquetes agregados. @auth Agregá uno haciendo click <a
-                                href="{{ route('noticias.crearNoticia') }}">acá</a>@endauth
+                                href="{{ route('usuarios.crearUsuario') }}">acá</a>@endauth
                         </p>
                         @endif
                     </div>

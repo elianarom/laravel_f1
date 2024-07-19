@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     protected $primaryKey = "user_id";
 
-    protected $fillable = ['nombre', 'apellido', 'email', 'password'];
+    protected $fillable = ['nombre', 'apellido', 'email', 'password', 'suscripcion_fk'];
 
     public function rols(): BelongsToMany
     {

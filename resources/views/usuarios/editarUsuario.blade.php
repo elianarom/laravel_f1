@@ -1,5 +1,7 @@
 <?php
 /** @var \App\Models\Usuario $usuario */
+/** @var $errors */
+/** @var \Illuminate\Database\Eloquent\Collection|\App\Models\Suscripcion[] $suscripciones */
 ?>
 
 
@@ -78,6 +80,27 @@
                                             </div>
                                             @error('password')
                                                     <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="sm:col-span-3">
+                                        <label for="suscripcion_fk"
+                                            class="block text-sm font-medium leading-6 text-gray-900">Plan de Suscripción</label>
+                                            <p class="text-xs">¿Querés cambiar tu plan?</p>
+                                        <div class="mt-2">
+                                            <select id="suscripcion_fk" name="suscripcion_fk"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                                <option value="">Planes disponibles</option>
+                                                @foreach ( $suscripciones as $suscripcion )
+                                                <option value="{{ $suscripcion->suscripcion_id }}" @selected($suscripcion->suscripcion_id == old('suscripcion_fk', $usuario->suscripcion_fk))>
+                                                    {{ $suscripcion->plan }}
+                                                </option>
+
+                                                @endforeach
+
+                                            </select>
+                                            @error('suscripcion_fk')
+                                                <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
