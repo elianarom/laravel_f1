@@ -44,6 +44,8 @@
                 <?php
                 ?>
             </div>
+
+            {{ $noticias->links() }}
         @else
             {{-- agregar imagen 404 --}}
             <p>Actualmente no tenes noticias creadas. @auth Agregá una haciendo click <a
