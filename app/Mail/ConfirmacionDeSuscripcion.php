@@ -2,12 +2,14 @@
 
 namespace App\Mail;
 
+use App\Models\Suscripcion;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
 
 class ConfirmacionDeSuscripcion extends Mailable
 {
@@ -16,10 +18,10 @@ class ConfirmacionDeSuscripcion extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        public Suscripcion $suscripcion
+    )
+    {}
 
     /**
      * Get the message envelope.
@@ -27,7 +29,8 @@ class ConfirmacionDeSuscripcion extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Confirmacion De Suscripcion',
+            subject: 'Confirmación de Plan suscripción',
+            from: new Address('no-responder@f1blog.com', 'F1 Blog')
         );
     }
 
@@ -37,7 +40,8 @@ class ConfirmacionDeSuscripcion extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails/confirmacionDeSuscripcion',
+            text: 'emails/confirmacionDeSuscripcionTexto',
         );
     }
 

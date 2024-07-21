@@ -89,7 +89,7 @@
                                         <div class="mt-2">
                                             <select id="suscripcion_fk" name="suscripcion_fk"
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                                <option value="">No estás suscripto a ningún plan</option>
+                                                <option value="">Seleccionar</option>
                                                 @foreach ( $suscripciones as $suscripcion )
                                                 <option value="{{ $suscripcion->suscripcion_id }}" @selected($suscripcion->suscripcion_id == old('suscripcion_fk', $usuario->suscripcion_fk))>
                                                     {{ $suscripcion->plan }}

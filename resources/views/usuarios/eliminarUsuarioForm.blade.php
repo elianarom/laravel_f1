@@ -26,13 +26,6 @@
                                     <div class="sm:col-span-4">
                                         <p class="block text-lg font-medium leading-6 text-gray-900">Email: <span class="font-black">{{ $usuario->email }}</span></p>
                                     </div>
-                                    <div class="sm:col-span-4">
-                                        <p class="block text-lg font-medium leading-6 text-gray-900">Rol: <span class="font-black">
-                                            @foreach ($usuario->rols as $rol )
-                                            {{ $rol->nombre }}
-                                            @endforeach</span>
-                                        </p>
-                                    </div>
                                     <div class="flex">
                                         <a href="{{ route('usuarios.index') }}" class="flex items-center mt-5 justify-between py-2.5 px-6 rounded-full bg-gray-400 text-white text-xs lg:xs font-bold hover:bg-gray-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Cancelar</a>
                                         <form action="{{ route('usuarios.eliminarUsuarioForm', ['id' => $usuario->user_id]) }}" method="POST" class="">

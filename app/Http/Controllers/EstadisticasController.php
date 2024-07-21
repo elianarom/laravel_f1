@@ -16,6 +16,7 @@ class EstadisticasController extends Controller
 
         return view('admin.estadisticas', [
             'user' => $usuarios->filter(fn ($user) => $user->rols->contains('rol_id', 2))->count(),
+            'admin' => $usuarios->filter(fn ($user) => $user->rols->contains('rol_id', 1))->count(),
             'suscripcion_none' => $suscripciones->filter(fn ($suscripcion) => $suscripcion->suscripcion->suscripcion_id == 0)->count(),
             'suscripcion_basic' => $suscripciones->filter(fn ($suscripcion) => $suscripcion->suscripcion->suscripcion_id == 1)->count(),
             'suscripcion_medium' => $suscripciones->filter(fn ($suscripcion) => $suscripcion->suscripcion->suscripcion_id == 2)->count(),

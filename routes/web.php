@@ -90,3 +90,7 @@ Route::get('/suscripciones', [\App\Http\Controllers\SuscripcionController::class
 Route::post('/suscripciones/{id}/suscribirse', [\App\Http\Controllers\SuscribirseController::class, "suscribirseProceso"])
     ->name('suscripciones.suscripcionProceso')
     ->middleware('auth');
+
+Route::get('test/emails/suscripcion-plan', [\App\Http\Controllers\SuscribirseController::class, "printEmail"])
+    ->name('suscripciones.suscripcionTest')
+    ->middleware('auth');

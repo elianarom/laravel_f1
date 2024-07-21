@@ -64,7 +64,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('auth.loginForm')
-            ->with('mensaje', '<p class="border bg-green-300 border-b-4 text-green-800">El usuario se registró con éxito.</p>');
+            ->with('mensaje', 'El usuario se registró con éxito.');
     }
 
     public function editarUsuario(int $id)

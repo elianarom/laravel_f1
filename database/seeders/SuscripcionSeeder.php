@@ -28,5 +28,10 @@ class SuscripcionSeeder extends Seeder
             'descripcion' => '',
             'precio' => 230,
         ]);
+        Suscripcion::create([
+            'plan' => 'Sin suscripcion',
+            'descripcion' => '',
+            'precio' => 0,
+        ]);
     }
 }
