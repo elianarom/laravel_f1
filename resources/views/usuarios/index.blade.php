@@ -9,7 +9,7 @@
             <div class="isolate overflow-hidden bg-white px-6 py-20 lg:overflow-visible lg:px-0">
                 <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-10">
 
-                    <div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div class="relative flex flex-col w-full h-full text-gray-700">
                         <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
                             <div class="flex flex-col justify-between gap-8 mb-4 md:flex-row md:items-center">
                                 <div>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
 
-                    <div class="p-6 px-0 overflow-scroll">
+                    <div class="p-6 px-0">
                         <table class="w-full text-left table-auto min-w-max">
                             <thead>
                                 <tr>
@@ -61,7 +61,7 @@
                                         <td class="p-4 border-b border-blue-gray-50">
                                             <div class="w-max">
                                                 <div class="">
-                                                        <span class="relative items-center px-2 py-1 font-sans text-xs font-bold text-yellow-900 uppercase rounded-md select-none whitespace-nowrap bg-blue-500/20">{{ $usuario->suscripcion->plan }}</span>
+                                                        <span class="relative items-center px-2 py-1 font-sans text-xs font-bold text-pink-900 uppercase rounded-md select-none whitespace-nowrap bg-violet-500/20">{{ $usuario->suscripcion->plan }}</span>
                                                 </div>
                                             </div>
                                         </td>
@@ -120,8 +120,7 @@
                             </tbody>
                         </table>
                         @else
-                        <p>Actualmente no tenes paquetes agregados. @auth Agregá uno haciendo click <a
-                                href="{{ route('usuarios.crearUsuario') }}">acá</a>@endauth
+                        <p>Actualmente no existen usuarios registrados :(.
                         </p>
                         @endif
                     </div>

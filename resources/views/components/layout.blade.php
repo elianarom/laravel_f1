@@ -58,6 +58,10 @@
                                 <a class="flex items-center justify-between text-red-600 text-sm lg:text-base font-bold hover:text-red-800 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
                                     href="{{ route('usuarios.index') }}">Usuarios</a>
                             </li>
+                            <li>
+                                <a class="flex items-center justify-between text-red-600 text-sm lg:text-base font-bold hover:text-red-800 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
+                                    href="{{ route('admin.estadisticas') }}">Estadísticas</a>
+                            </li>
                         @else
                             <li>
                                 <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"

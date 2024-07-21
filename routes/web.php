@@ -70,12 +70,16 @@ Route::get('/usuarios/{id}/editar', [\App\Http\Controllers\UserController::class
 Route::post('/usuarios/{id}/editar', [\App\Http\Controllers\UserController::class, "editarUsuarioProceso"])
     ->name('usuarios.editarUsuarioProceso')
     ->whereNumber('id')
-    ->middleware('auth', \App\Http\Middleware\CheckRol::class);
+    ->middleware('auth');
 Route::get('/usuarios/{id}/eliminar', [\App\Http\Controllers\UserController::class, "eliminarUsuarioForm"])
     ->name('usuarios.eliminarUsuarioForm')
     ->whereNumber('id')
-    ->middleware('auth', \App\Http\Middleware\CheckRol::class);
+    ->middleware('auth');
 Route::post('/usuarios/{id}/eliminar', [\App\Http\Controllers\UserController::class, "eliminarUsuarioProceso"])
     ->name('usuarios.eliminarUsuarioProceso')
     ->whereNumber('id')
+    ->middleware('auth');
+
+Route::get('/estadisticas', [\App\Http\Controllers\EstadisticasController::class, "adminEstadisticas"])
+    ->name('admin.estadisticas')
     ->middleware('auth', \App\Http\Middleware\CheckRol::class);

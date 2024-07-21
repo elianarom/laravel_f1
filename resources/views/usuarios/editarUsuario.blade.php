@@ -15,7 +15,7 @@
                     @if ($errors->any())
                         <div class="p-2 mb-2 text-base font-bold text-red-600 rounded-lg bg-red-50">* Hay errores en los datos del formulario.</div>
                     @endif
-                    <form action="{{ route('usuarios.editarUsuarioProceso', ['id' => $usuario->user_id]) }}" method="post">
+                    <form action="{{ route('usuarios.editarUsuarioProceso', ['id' => $usuario->user_id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
@@ -86,7 +86,7 @@
                                     <div class="sm:col-span-3">
                                         <label for="suscripcion_fk"
                                             class="block text-sm font-medium leading-6 text-gray-900">Plan de Suscripción</label>
-                                            <p class="text-xs">¿Querés cambiar tu plan?</p>
+                                            <p class="text-xs">¿Querés cambiar tu plan? Tu plan actual vence el día 30 de cada mes. Te recomendamos que esperes a ese día para que no se te aplique una tarifa extra.</p>
                                         <div class="mt-2">
                                             <select id="suscripcion_fk" name="suscripcion_fk"
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6">
@@ -110,6 +110,12 @@
 
                         <div class="flex items-center justify-start gap-x-6 mb-20 ">
                             <button class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline  focus-visible:outline-offset-2">Guardar cambios</button>
+                        </div>
+
+                        <div class="items-center justify-start gap-x-6 mb-20 ">
+                            <p>Eliminar cuenta</p>
+                            <p>Si seleccionas esta opción, tu cuenta dejará de existir y tu plan se dará de baja automáticamente.</p>
+                            <button class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline  focus-visible:outline-offset-2">Eliminar cuenta</button>
                         </div>
                     </form>
                 </div>

@@ -65,14 +65,14 @@ class UserController extends Controller
 
         return redirect()
             ->route('auth.loginForm')
-            ->with('mensaje', 'El usuario se registró con éxito.');
+            ->with('mensaje', '<p class="border bg-green-300 border-b-4 text-green-800">El usuario se registró con éxito.</p>');
     }
 
     public function editarUsuario(int $id)
     {
         return view('usuarios.editarUsuario', [
             'usuario' => User::findOrFail($id),
-             'suscripciones' => Suscripcion::all()
+            'suscripciones' => Suscripcion::all()
         ]);
     }
 
@@ -82,8 +82,7 @@ class UserController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'email' => 'required',
-            'password' => 'required',
-            'suscripcion_fk' => 'required'
+            'password' => 'required'
         ]);
 
         $input = $request->only(['nombre', 'apellido', 'email', 'password', 'suscripcion_fk']);

@@ -14,18 +14,18 @@ class SuscripcionSeeder extends Seeder
     public function run(): void
     {
         Suscripcion::create([
-            'plan' => 'Plan básico',
-            'descripcion' => 'Podés publicar noticias.',
+            'plan' => 'Basic',
+            'descripcion' => '',
             'precio' => 100,
         ]);
         Suscripcion::create([
-            'plan' => 'Plan Medium',
-            'descripcion' => 'Podés publicar y editar tus noticias.',
+            'plan' => 'Medium',
+            'descripcion' => '',
             'precio' => 150,
         ]);
         Suscripcion::create([
-            'plan' => 'Plan Gold',
-            'descripcion' => 'Podés publicar, editar y eliminar tus noticias.',
+            'plan' => 'Gold',
+            'descripcion' => '',
             'precio' => 230,
         ]);
     }
