@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class SuscripcionController extends Controller
 {
-
+    public function indexSuscripciones()
+    {
+        $suscripciones = Suscripcion::all();
+        return view('suscripciones.index', [
+            'suscripciones' => $suscripciones,
+        ]);
+    }
 }
 

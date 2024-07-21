@@ -83,3 +83,10 @@ Route::post('/usuarios/{id}/eliminar', [\App\Http\Controllers\UserController::cl
 Route::get('/estadisticas', [\App\Http\Controllers\EstadisticasController::class, "adminEstadisticas"])
     ->name('admin.estadisticas')
     ->middleware('auth', \App\Http\Middleware\CheckRol::class);
+
+Route::get('/suscripciones', [\App\Http\Controllers\SuscripcionController::class, "indexSuscripciones"])
+    ->name('suscripciones.index');
+
+Route::post('/suscripciones/{id}/suscribirse', [\App\Http\Controllers\SuscribirseController::class, "suscribirseProceso"])
+    ->name('suscripciones.suscripcionProceso')
+    ->middleware('auth');

@@ -52,7 +52,6 @@ class UserController extends Controller
             'apellido' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'suscripcion_fk' => 'required',
         ]);
 
         $user = User::create([

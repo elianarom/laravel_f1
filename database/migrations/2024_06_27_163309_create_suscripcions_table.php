@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('suscripcions', function (Blueprint $table) {
             $table->tinyIncrements('suscripcion_id');
-            $table->string('plan');
+            $table->string('plan')->nullable();
             $table->string('descripcion');
             $table->unsignedInteger('precio');
             $table->timestamps();

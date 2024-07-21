@@ -99,7 +99,7 @@ class NoticiasController extends Controller
 
         return redirect()
             ->route('admin.dashboard')
-            ->with('mensaje', 'La noticia <b>' . e($input['titulo']) . ' </b>se editó con éxito.');
+            ->with('mensaje', 'La noticia <b> ' . e($input['titulo']) . ' </b> se editó con éxito.');
     }
 
     public function eliminarForm(int $id)

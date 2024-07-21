@@ -12,7 +12,13 @@
             <div class="isolate overflow-hidden bg-white px-6 py-20 lg:overflow-visible lg:px-0">
                 <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-10">
                     <h1 class="font-semibold text-3xl">Mi Perfil</h1>
-                    <p class="w-max py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900">El plan que tenés contratado es: {{ $usuario->suscripcion->plan }}</p>
+
+                        @if ($usuario->suscripcion == null)
+                        <p class="text-red-600 font-bold">No estás suscripto a ningún plan.
+                        </p>
+                        @else
+                            <p>{{ $usuario->suscripcion->plan }}</p>
+                        @endif
 
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
