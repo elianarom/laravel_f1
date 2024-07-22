@@ -94,3 +94,12 @@ Route::post('/suscripciones/{id}/suscribirse', [\App\Http\Controllers\Suscribirs
 Route::get('test/emails/suscripcion-plan', [\App\Http\Controllers\SuscribirseController::class, "printEmail"])
     ->name('suscripciones.suscripcionTest')
     ->middleware('auth');
+
+Route::get('test/mercadopago', [\App\Http\Controllers\MercadoPagoController::class, 'mostrar'])
+    ->name('testMercadoPagoMostrar');
+Route::get('test/mercadopago/success', [\App\Http\Controllers\MercadoPagoController::class, 'exitoProceso'])
+    ->name('test.mercadopago.success');
+    Route::get('test/mercadopago/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pendienteProceso'])
+    ->name('test.mercadopago.pending');
+    Route::get('test/mercadopago/failure', [\App\Http\Controllers\MercadoPagoController::class, 'errorProceso'])
+    ->name('test.mercadopago.failure');
