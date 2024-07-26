@@ -102,6 +102,8 @@ Route::get('test/mercadopago/success/{id}/{suscripcion_fk}', [\App\Http\Controll
     ->name('test.mercadopago.success')
     ->middleware('auth');
     Route::get('test/mercadopago/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pendienteProceso'])
-    ->name('test.mercadopago.pending');
+    ->name('test.mercadopago.pending')
+    ->middleware('auth');
     Route::get('test/mercadopago/failure', [\App\Http\Controllers\MercadoPagoController::class, 'errorProceso'])
-    ->name('test.mercadopago.failure');
+    ->name('test.mercadopago.failure')
+    ->middleware('auth');

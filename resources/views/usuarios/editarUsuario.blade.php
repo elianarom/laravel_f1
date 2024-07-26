@@ -75,8 +75,8 @@
                                             class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                         <div class="mt-2">
                                             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                                <input type="text" name="password" id="password"
-                                                    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" value="{{ old('password', $usuario->password) }}">
+                                                <input type="password" name="password" id="password"
+                                                    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" value="{{ old('password', $usuario->password) }}" disabled>
                                             </div>
                                             @error('password')
                                                     <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
@@ -88,8 +88,8 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-start gap-x-6 mb-20 ">
-                            <button class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline  focus-visible:outline-offset-2">Guardar cambios</button>
+                        <div class="justify-start mb-20">
+                            <button class="py-3 px-8 bg-black shadow-sm rounded-full transition-all duration-500 text-lg text-white font-semibold text-center w-fit mx-auto hover:bg-red-700">Guardar cambios</button>
                         </div>
                     </form>
                 </div>

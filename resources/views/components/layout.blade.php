@@ -68,8 +68,13 @@
                                     href="{{ route('suscripciones.index', auth()->user()->user_id) }}">Suscripciones</a>
                             </li>
                             <li>
-                                <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
-                                    href="{{ route('usuarios.vista', auth()->user()->user_id) }}">Mi Perfil</a>
+                                <a  href="{{ route('usuarios.vista', auth()->user()->user_id) }}" class='relative w-10 h-10 bg-sky-100 border-2 border-solid border-sky-600 flex justify-center items-center rounded-full'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15.9998 7C15.9998 9.20914 14.2089 11 11.9998 11C9.79067 11 7.99981 9.20914 7.99981 7C7.99981 4.79086 9.79067 3 11.9998 3C14.2089 3 15.9998 4.79086 15.9998 7Z" stroke="#0284C7" stroke-width="1.6" />
+                                    <path d="M11.9998 14C9.15153 14 6.65091 15.3024 5.23341 17.2638C4.48341 18.3016 4.10841 18.8204 4.6654 19.9102C5.2224 21 6.1482 21 7.99981 21H15.9998C17.8514 21 18.7772 21 19.3342 19.9102C19.8912 18.8204 19.5162 18.3016 18.7662 17.2638C17.3487 15.3024 14.8481 14 11.9998 14Z" stroke="#0284C7" stroke-width="1.6" />
+                                    </svg>
+                                    <span class='bottom-0 left-7 absolute  w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full'></span>
+                                </a>
                             </li>
                         @endif
                             <li>
@@ -88,9 +93,11 @@
 
     <main>
         @if (session()->has('mensaje'))
-            <div class="ml-10 mr-10 flex items-center p-4 mb-4 rounded-xl text-sm border" {{ session()->get('feedback.type', 'success') }} role="alert">
-             {!! session()->get('mensaje') !!}
+        <div class="mx-auto text-center max-w-lg px-4 sm:px-6 lg:px-8">
+            <div class="p-4 mb-4 text-sm text-white rounded-xl bg-gray-900  font-normal" {{ session()->get('feedback.type', 'success') }} role="alert">
+                {!! session()->get('mensaje') !!}
             </div>
+        </div>
             <!--<div class="alert alert-{{ session()->get('feedback.type', 'success') }}">{!! session()->get('mensaje') !!}</div>-->
         @endif
 

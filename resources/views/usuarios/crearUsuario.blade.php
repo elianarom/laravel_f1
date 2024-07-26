@@ -8,29 +8,23 @@
     <section class="relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:mx-32">
             <div class="isolate overflow-hidden bg-white px-6 py-20 lg:overflow-visible lg:px-0">
-                <div
-                    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-10">
+                <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-10">
                     <h1 class="mb-3 font-semibold text-2xl">Registrar nuevo usuario</h1>
                     <form action="{{ route('usuarios.crearProceso') }}" method="post">
                         @csrf
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
-
                                 <div class="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                                     <div class="sm:col-span-4">
-                                        <label for="nombre"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+                                        <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
                                         <div class="mt-2">
-                                            <div
-                                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset sm:max-w-md">
-                                                <input type="text" name="nombre" id="nombre"
-                                                    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                                    placeholder="Nombre" value="{{ old('nombre') }}">
+                                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2           focus-within:ring-inset sm:max-w-md">
+                                                <input type="text" name="nombre" id="nombre" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Nombre" value="{{ old('nombre') }}">
                                             </div>
                                             @error('nombre')
-                                                    <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
-                                                @enderror
+                                                <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -84,11 +78,13 @@
                                     <div class="sm:col-span-3">
                                         <label for="suscripcion_fk"
                                             class="block text-sm font-medium leading-6 text-gray-900">Plan de Suscripción</label>
-                                            <p class="text-xs">Elegí el plan de suscripción que querés contratar.</p>
+                                            <div class="pt-2 mb-4 text-sm text-amber-500 rounded-xl bg-amber-50 font-normal" role="alert">
+                                                Para elegir tu plan de suscripción, <span class="font-semibold">primero tenés que registrate.</span></br> Una vez logueado, podrás realizar esta acción.
+                                            </div>
                                         <div class="mt-2">
                                             <select id="suscripcion_fk" name="suscripcion_fk"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                                <option value="">Seleccionar</option>
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6" disabled>
+                                                <option value="" >Seleccionar</option>
                                                 @foreach ( $suscripciones as $suscripcion )
                                                 <option value="{{ $suscripcion->suscripcion_id }}">
                                                     {{ $suscripcion->plan }}

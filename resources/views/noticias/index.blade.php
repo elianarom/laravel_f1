@@ -30,7 +30,7 @@
                                         <span>Sin categoría.</span>
                                     @endforelse
                             <p class="text-lg font-semibold text-gray-900 mb-2 mt-5 transition-all duration-500 ">
-                                {{ $noticia->titulo }}
+                                {{ Str::limit($noticia->titulo, 40) }}
                             </p>
                             <p class="text-sm truncate font-normal text-gray-500 transition-all duration-500 leading-5 mb-5">
                                 {{ $noticia->descripcion }}

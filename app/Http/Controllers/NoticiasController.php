@@ -13,7 +13,7 @@ class NoticiasController extends Controller
 {
     public function index()
     {
-        $noticias = Noticia::with(['escuderia', 'categorias'])->paginate(3);
+        $noticias = Noticia::with(['escuderia', 'categorias'])->paginate(6);
 
         return view('noticias.index', [
             'noticias' => $noticias,
