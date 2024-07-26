@@ -6,7 +6,7 @@
 ?>
 
 <x-layout>
-    <x-slot:title>Prueba de Integración con Mercado Pago</x-slot:title>
+    <x-slot:title>Ckeckout</x-slot:title>
 
     <section class="relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:mx-32">
@@ -17,30 +17,30 @@
                         <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
                             <div class="flex flex-col justify-between gap-8 mb-4 md:flex-row md:items-center">
                                 <div>
-                                    <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Prueba de Integración con Mercado Pago</h1>
+                                    <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ckeckout</h1>
                                     <p class="block mt-3 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-                                        Acá vas a poder ver, editar y eliminar las noticias publicadas.
+                                        Esta es la suscripción que elegiste, una vez realices el pago, se actualizará automáticamente en tu perfil.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 px-0">
-                        <table class="w-full text-left table-auto min-w-max">
-                            <thead>
+                    <div class="relative">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-900 uppercase bg-gray-100 dark:bg-gray-200 dark:text-gray-900">
                                 <tr>
-                                    <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">Plan</p>
+                                    <th scope="col" class="px-6 py-3 rounded-s-lg">
+                                        Plan
                                     </th>
-                                    <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">Precio</p>
+                                    <th scope="col" class="px-6 py-3">
+                                        Cantidad
                                     </th>
-                                    <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">Cantidad</p>
+                                    <th scope="col" class="px-6 py-3 rounded-e-lg">
+                                        Precio
                                     </th>
-                                    <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">Subtotal</p>
+                                    <th scope="col" class="px-6 py-3 rounded-e-lg">
+                                        Subtotal
                                     </th>
                                 </tr>
                             </thead>
@@ -48,42 +48,34 @@
                                 <?php
                                 ?>
                                 @foreach ($suscripciones as $suscripcion)
-                                    <tr>
-                                        <td class="p-4 border-b border-blue-gray-50">
-                                            <div class="flex items-center gap-3">
-                                                <p class="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">{{ $suscripcion->plan }}</p>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 border-b border-blue-gray-50">
-                                            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                            $ {{ $suscripcion->precio }}</p>
-                                        </td>
-                                        <td class="p-4 border-b border-blue-gray-50">
-                                            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                            1</p>
-                                        </td>
-                                        <td class="p-4 border-b border-blue-gray-50">
-                                            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                            $ {{ $suscripcion->precio }}</p>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                <tr>
-                                    <td class="p-4 border-b border-blue-gray-50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                        TOTAL</p>
+                                <tr class="">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $suscripcion->plan }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        1
                                     </td>
-                                    <td class="p-4 border-b border-blue-gray-50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                        $ {{ $suscripcion->sum('precio') }}</p>
+                                    <td class="px-6 py-4">
+                                        {{ $suscripcion->precio }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $suscripcion->precio }}
                                     </td>
                                 </tr>
-                                <?php
-                                ?>
+                                @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr class="font-semibold text-gray-900">
+                                    <th scope="row" class="px-6 py-3 text-base">Total</th>
+                                    <td class="px-6 py-4"></td>
+                                    <td class="px-6 py-4"></td>
+                                    <td class="px-6 py-4">$ {{ $suscripcion->precio ?? 0 }}</td>
+                                </tr>
+                            </tfoot>
                         </table>
                         <div id="mercadopago-boton"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -94,7 +86,7 @@
     const mp = new MercadoPago('<?= $mpPublicKey;?>');
     mp.bricks().create('wallet', 'mercadopago-boton', {
         initialization: {
-            preferenceId: '<?= $preference->id;?>',
+            preferenceId: '<?= $preference->id;?>'
         }
     });
 </script>

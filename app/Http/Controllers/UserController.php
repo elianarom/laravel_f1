@@ -59,7 +59,7 @@ class UserController extends Controller
             'apellido'=> $input['apellido'],
             'email' => $input['email'],
             'password' => \Hash::make($input['password']),
-            'suscripcion_fk' => $input['suscripcion_fk']
+            'suscripcion_fk' => $input['suscripcion_fk'],
         ]);
 
         return redirect()
@@ -77,12 +77,13 @@ class UserController extends Controller
 
     public function editarUsuarioProceso(int $id, Request $request)
     {
-        $request->validate([
+        //dd($request);
+        /*$request->validate([
             'nombre' => 'required',
             'apellido' => 'required',
             'email' => 'required',
-            'password' => 'required'
-        ]);
+            'password' => 'required',
+        ]);*/
 
         $input = $request->only(['nombre', 'apellido', 'email', 'password', 'suscripcion_fk']);
 
@@ -91,8 +92,8 @@ class UserController extends Controller
         $usuario->update($input);
 
         return redirect()
-            ->route('usuarios.index')
-            ->with('mensaje', 'El usuario <b>' . e($input['email']) . ' </b>se editó con éxito.');
+            ->route('home')
+            ->with('mensaje', 'Tus cambios se guardaron con éxito.');
     }
 
     public function eliminarUsuarioForm(int $id)

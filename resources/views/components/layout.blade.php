@@ -39,10 +39,6 @@
                             <a href="{{ route('noticias.index') }}"
                                 class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Noticias</a>
                         </li>
-                        <li>
-                            <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
-                                href="{{ route('suscripciones.index') }}">Suscripciones</a>
-                        </li>
                         @guest
                             <li>
                                 <a class="flex text-black lg:text-base font-bold transition-all duration-500 mb-2 md:mb-0 md:mr-3 py-2.5 px-6 text-sm border border-black  hover:bg-black hover:text-white rounded-full shadow-xs"
@@ -67,6 +63,10 @@
                                     href="{{ route('admin.estadisticas') }}">Estadísticas</a>
                             </li>
                         @else
+                            <li>
+                                <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
+                                    href="{{ route('suscripciones.index', auth()->user()->user_id) }}">Suscripciones</a>
+                            </li>
                             <li>
                                 <a class="flex items-center justify-between text-black text-sm lg:text-base font-bold hover:text-red-600 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3"
                                     href="{{ route('usuarios.vista', auth()->user()->user_id) }}">Mi Perfil</a>

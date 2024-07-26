@@ -13,9 +13,9 @@
                     <div
                         class="mx-3 mt-6 flex flex-col rounded-lg border border-black bg-white text-black sm:shrink-0 sm:grow sm:basis-0">
                         <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                            @if ($noticia->portada != null && \Storage::exists($noticia->portada))
+                            @if ($noticia->portada != null && Storage::exists($noticia->portada))
                                 <a href="{{ route('noticias.vista', ['id' => $noticia->noticia_id]) }}">
-                                    <img class="rounded-t-lg transition duration-300 ease-in-out hover:scale-110" src="{{ \Storage::url($noticia->portada) }}" alt="{{ $noticia->portada_descripcion }}" />
+                                    <img class="rounded-t-lg transition duration-300 ease-in-out hover:scale-110" src="{{ Storage::url($noticia->portada) }}" alt="{{ $noticia->portada_descripcion }}" />
                                 </a>
                             @else
                                 <a href="{{ route('noticias.vista', ['id' => $noticia->noticia_id]) }}">

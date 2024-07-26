@@ -85,7 +85,8 @@ Route::get('/estadisticas', [\App\Http\Controllers\EstadisticasController::class
     ->middleware('auth', \App\Http\Middleware\CheckRol::class);
 
 Route::get('/suscripciones', [\App\Http\Controllers\SuscripcionController::class, "indexSuscripciones"])
-    ->name('suscripciones.index');
+    ->name('suscripciones.index')
+    ->middleware('auth');
 
 Route::post('/suscripciones/{id}/suscribirse', [\App\Http\Controllers\SuscribirseController::class, "suscribirseProceso"])
     ->name('suscripciones.suscripcionProceso')
@@ -97,8 +98,9 @@ Route::get('test/emails/suscripcion-plan', [\App\Http\Controllers\SuscribirseCon
 
 Route::get('test/mercadopago', [\App\Http\Controllers\MercadoPagoController::class, 'mostrar'])
     ->name('testMercadoPagoMostrar');
-Route::get('test/mercadopago/success', [\App\Http\Controllers\MercadoPagoController::class, 'exitoProceso'])
-    ->name('test.mercadopago.success');
+Route::get('test/mercadopago/success/{id}/{suscripcion_fk}', [\App\Http\Controllers\MercadoPagoController::class, 'exitoProceso'])
+    ->name('test.mercadopago.success')
+    ->middleware('auth');
     Route::get('test/mercadopago/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pendienteProceso'])
     ->name('test.mercadopago.pending');
     Route::get('test/mercadopago/failure', [\App\Http\Controllers\MercadoPagoController::class, 'errorProceso'])

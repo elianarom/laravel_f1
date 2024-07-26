@@ -16,22 +16,17 @@ class SuscripcionSeeder extends Seeder
         Suscripcion::create([
             'plan' => 'Basic',
             'descripcion' => '',
-            'precio' => 100,
+            'precio' => 0,
         ]);
         Suscripcion::create([
             'plan' => 'Medium',
             'descripcion' => '',
-            'precio' => 150,
+            'precio' => 5,
         ]);
         Suscripcion::create([
             'plan' => 'Gold',
             'descripcion' => '',
-            'precio' => 230,
-        ]);
-        Suscripcion::create([
-            'plan' => 'Sin suscripcion',
-            'descripcion' => '',
-            'precio' => 0,
+            'precio' => 10,
         ]);
     }
 }

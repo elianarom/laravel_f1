@@ -47,7 +47,7 @@ class MercadoPagoPay
         if(is_string($failure)) $this->backUrls['failure'] = $failure;
     }
 
-    public function whithAutoReturn()
+    public function withAutoReturn()
     {
         $this->autoReturn = true;
     }
@@ -57,7 +57,7 @@ class MercadoPagoPay
         if(count($this->items) == 0) throw new \Exception('Tenés que definir los items del cobro.');
 
         $config = [
-            'items' => $this->items,
+            'items' => $this->items
         ];
         if(count($this->backUrls)) $config['back_urls'] = $this->backUrls;
         if($this->autoReturn) $config['auto_return'] = 'approved';

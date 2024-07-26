@@ -83,38 +83,13 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="sm:col-span-3">
-                                        <label for="suscripcion_fk"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Plan de Suscripción</label>
-                                        <div class="mt-2">
-                                            <select id="suscripcion_fk" name="suscripcion_fk"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                                <option value="">Seleccionar</option>
-                                                @foreach ( $suscripciones as $suscripcion )
-                                                <option value="{{ $suscripcion->suscripcion_id }}" @selected($suscripcion->suscripcion_id == old('suscripcion_fk', $usuario->suscripcion_fk))>
-                                                    {{ $suscripcion->plan }}
-                                                </option>
 
-                                                @endforeach
-
-                                            </select>
-                                            @error('suscripcion_fk')
-                                                <div class="mt-2 font-semibold text-xs text-red-600">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-start gap-x-6 mb-20 ">
                             <button class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline  focus-visible:outline-offset-2">Guardar cambios</button>
-                        </div>
-
-                        <div class="items-center justify-start gap-x-6 mb-20 ">
-                            <p>Eliminar cuenta</p>
-                            <p>Si seleccionas esta opción, tu cuenta dejará de existir y tu plan se dará de baja automáticamente.</p>
-                            <button class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline  focus-visible:outline-offset-2">Eliminar cuenta</button>
                         </div>
                     </form>
                 </div>

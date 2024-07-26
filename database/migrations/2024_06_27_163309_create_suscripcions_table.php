@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('plan')->nullable();
             $table->string('descripcion');
             $table->unsignedInteger('precio');
+            $table->timestamp('fecha_suscripcion')->nullable();
             $table->timestamps();
         });
     }

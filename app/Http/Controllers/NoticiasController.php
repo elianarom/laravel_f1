@@ -46,7 +46,7 @@ class NoticiasController extends Controller
 
         $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion']);
 
-        if($request->hasFile('portada')) {
+        if($request->hasFile('portada') && $request->file('portada')->isValid()) {
             $input['portada'] = $request->file('portada')->store('imgs');
             Image::read(\Storage::path($input['portada']))
             ->coverDown(912, 768)
@@ -58,7 +58,7 @@ class NoticiasController extends Controller
 
         return redirect()
             ->route('admin.dashboard')
-            ->with('mensaje', 'La noticias <b>' . e($input['titulo']) . ' </b>se publicó con éxito.');
+            ->with('mensaje', 'La noticia <b>' . e($input['titulo']) . ' </b> se publicó con éxito.');
     }
 
     public function editarForm(int $id)

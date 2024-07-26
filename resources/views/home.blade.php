@@ -56,13 +56,6 @@
         </div>
       </header>
 
-    <main>
-        <section class="md:container md:mx-auto mb-10">
-            <div class="grid grid-cols-1 grid-rows-1 md:grid-cols-2">
 
-              </div>
-        </section>
-
-    </main>
 
 </x-layout>

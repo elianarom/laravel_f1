@@ -16,7 +16,7 @@
                         <p>No estás suscripto a ningún plan actualmente.</p>
                     @else
                         <p>Estás suscripto al plan : {{ $usuario->suscripcion->plan }}</p>
-                        <p>Miembro desde </p>
+                        <p>Miembro desde {{ \Carbon\Carbon::parse($usuario->updated_at)->format('d F Y H:i:s') }}</p>
                     @endif
 
                         <div class="space-y-12">
