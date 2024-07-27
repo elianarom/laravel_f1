@@ -38,6 +38,15 @@
                             <p class="text-xs font-semibold text-gray-900 mb-2 mt-5 transition-all duration-500 ">
                                 Noticia sobre team <span class="text-red-500 font-medium">{{ $noticia->escuderia->name }}</span>
                             </p>
+                            @if (!$noticia->updated_at == 'NULL')
+                            <p class="text-xs font-semibold text-gray-500 mb-2 mt-5 transition-all duration-500 ">
+                                Fecha de publicación:
+                            </p>
+                            @else
+                            <p class="text-xs font-semibold text-gray-500 mb-2 mt-5 transition-all duration-500 ">
+                                Fecha de publicación: {{ ($noticia->updated_at)->format('d F Y') }}
+                            </p>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -47,9 +56,7 @@
 
             {{ $noticias->links() }}
         @else
-            {{-- agregar imagen 404 --}}
-            <p>Actualmente no tenes noticias creadas. @auth Agregá una haciendo click <a
-                    href="{{ route('noticias.crearNoticia') }}">acá</a>@endauth
+            <p>Actualmente no tenes noticias creadas. @auth Agregá una haciendo click <a href="{{ route('noticias.crearNoticia') }}">acá</a>@endauth
             </p>
         @endif
     </section>

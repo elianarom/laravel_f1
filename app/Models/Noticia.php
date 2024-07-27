@@ -30,7 +30,7 @@ class Noticia extends Model
 {
     use HasFactory;
     protected $primaryKey = "noticia_id";
-    protected $fillable = ['titulo', 'descripcion', 'escuderia_fk', 'portada', 'portada_descripcion'];
+    protected $fillable = ['titulo', 'descripcion', 'escuderia_fk', 'portada', 'portada_descripcion', 'fecha_publicacion'];
 
     /*protected function precio(): Attribute
     {

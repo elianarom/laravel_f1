@@ -44,7 +44,7 @@ class NoticiasController extends Controller
             'descripcion' => 'required',
         ]);
 
-        $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion']);
+        $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion', 'fecha_publicacion']);
 
         if($request->hasFile('portada') && $request->file('portada')->isValid()) {
             $input['portada'] = $request->file('portada')->store('imgs');
