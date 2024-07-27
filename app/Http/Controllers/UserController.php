@@ -77,7 +77,6 @@ class UserController extends Controller
 
     public function editarUsuarioProceso(int $id, Request $request)
     {
-        //dd($request);
         /*$request->validate([
             'nombre' => 'required',
             'apellido' => 'required',
