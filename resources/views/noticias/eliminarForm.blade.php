@@ -23,6 +23,7 @@
                         <div class="lg:pr-4">
                             <div class="lg:max-w-full">
                                 <p class="text-base font-semibold leading-7 text-red-600">{{ $noticia->escuderia->name }}</p>
+                                <p class="mt-6 text-lg leading-8 text-gray-700">{{ $noticia->fecha_publicacion }}</p>
                                 <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $noticia->titulo }}</h1>
                                 <p class="mt-6 text-lg leading-8 text-gray-700">{{ $noticia->descripcion }}</p>
                             </div>

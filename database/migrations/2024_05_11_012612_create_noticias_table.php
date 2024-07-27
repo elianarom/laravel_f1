@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('noticia_id');
             $table->string('titulo', 100);
             $table->text('descripcion');
-            $table->timestamp('fecha_publicacion')->nullable();
+            $table->date('fecha_publicacion')->nullable();
             $table->timestamps();
         });
     }

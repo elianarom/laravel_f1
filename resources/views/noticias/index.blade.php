@@ -13,9 +13,9 @@
                     <div
                         class="mx-3 mt-6 flex flex-col rounded-lg border border-black bg-white text-black sm:shrink-0 sm:grow sm:basis-0">
                         <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                            @if ($noticia->portada != null && Storage::exists($noticia->portada))
+                            @if ($noticia->portada != null && \Storage::exists($noticia->portada))
                                 <a href="{{ route('noticias.vista', ['id' => $noticia->noticia_id]) }}">
-                                    <img class="rounded-t-lg transition duration-300 ease-in-out hover:scale-110" src="{{ Storage::url($noticia->portada) }}" alt="{{ $noticia->portada_descripcion }}" />
+                                    <img class="rounded-t-lg transition duration-300 ease-in-out hover:scale-110" src="{{ \Storage::url($noticia->portada) }}" alt="{{ $noticia->portada_descripcion }}" />
                                 </a>
                             @else
                                 <a href="{{ route('noticias.vista', ['id' => $noticia->noticia_id]) }}">
@@ -38,13 +38,13 @@
                             <p class="text-xs font-semibold text-gray-900 mb-2 mt-5 transition-all duration-500 ">
                                 Noticia sobre team <span class="text-red-500 font-medium">{{ $noticia->escuderia->name }}</span>
                             </p>
-                            @if (!$noticia->updated_at == 'NULL')
+                            @if (!$noticia->fecha_publicacion == 'NULL')
                             <p class="text-xs font-semibold text-gray-500 mb-2 mt-5 transition-all duration-500 ">
                                 Fecha de publicación:
                             </p>
                             @else
                             <p class="text-xs font-semibold text-gray-500 mb-2 mt-5 transition-all duration-500 ">
-                                Fecha de publicación: {{ ($noticia->updated_at)->format('d F Y') }}
+                                Fecha de publicación: {{ $noticia->fecha_publicacion }}
                             </p>
                             @endif
                         </div>

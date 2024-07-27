@@ -46,7 +46,7 @@ class NoticiasController extends Controller
 
         $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion', 'fecha_publicacion']);
 
-        if($request->hasFile('portada') && $request->file('portada')->isValid()) {
+        if($request->hasFile('portada')) {
             $input['portada'] = $request->file('portada')->store('imgs');
             Image::read(\Storage::path($input['portada']))
             ->coverDown(912, 768)
@@ -77,7 +77,7 @@ class NoticiasController extends Controller
             'descripcion' => 'required',
         ]);
 
-        $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion']);
+        $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion', 'fecha_publicacion']);
 
         $noticia = Noticia::findOrFail($id);
 
