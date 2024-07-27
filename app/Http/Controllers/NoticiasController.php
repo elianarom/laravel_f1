@@ -42,6 +42,8 @@ class NoticiasController extends Controller
         $request->validate([
             'titulo' => 'required',
             'descripcion' => 'required',
+            'escuderia_fk' => 'required',
+            'fecha_publicacion' => 'required',
         ]);
 
         $input = $request->only(['titulo', 'descripcion', 'escuderia_fk', 'portada_descripcion', 'fecha_publicacion']);

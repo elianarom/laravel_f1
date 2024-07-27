@@ -27,6 +27,7 @@ class NoticiaSeeder extends Seeder
                 En cualquier caso, el desempeño en Barcelona parece que deja satisfecho a Horner, quien explica que las predicciones de carrera realizadas por los ordenadores no daban más de un octavo puesto para Pérez después de partir undécimo en parrilla: “Nuestras simulaciones decían que el octavo puesto era el óptimo desde el puesto 11 en la parrilla, así que lo logró, lo hizo con una estrategia de tres paradas. Creo, y espero que así sea, que obtendrá un poco de confianza y espero que la lleve a los próximos fines de semana, que son grandes fines de semana para él”, finaliza el mandamás de Red Bull.
 
                 El piloto, por su parte, también es consciente de que se esperan mejores resultados de él. Terminó la carrera de Barcelona como un aprendizaje para volver a mejores puestos en próximos fines de semana que, como expresó Horner, son “grandes” para él. El próximo, en Austria, la casa de Red Bull…',
+                'fecha_publicacion' => '27-07-27',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -43,6 +44,7 @@ class NoticiaSeeder extends Seeder
                 Williams, con motor Mercedes para el 2026 y ciertos progresos desde la llegada de James Vowles como ‘team principal’, igualan la oferta económica y dan más libertad al español en caso llame a la puerta un equipo top. No se puede descartar un movimiento de Verstappen a medio plazo, ya ha habido tensión desde marzo y se puede reproducir en el futuro. Además, hoy Red Bull ya no es mucho más fuerte que Mercedes en cuanto a prestaciones puras. La sombra de que Milton Keynes no sepa hacer un buen motor ante el cambio reglamentario es permanente. Y cada cierto tiempo, los satélites de Verstappen repiten que su futuro está en Red Bull… o no.
 
                 En cuanto a Alpine, siempre estuvo ahí. No todas las reuniones de los Sainz han sido secretas y los movimientos por el ‘paddock’ son fáciles de seguir. Al mismo tiempo, no todas las reuniones son sinónimo de oferta. El equipo de Enstone es un fijo del top-10 incluso en las peores circunstancias. Han cambiado a buena parte del equipo técnico tras el fiasco inicial del A524 pero ahora Gasly y Ocon están en los puntos, aunque sea temporal. Para Sainz, puede ser interesante su cercanía constante a la Q3. El proyecto a largo plazo es más dudoso, se entiende que podrían descartar hacer su propio motor en 2026. No se sabe si eso es bueno (por recibir un motor mejor) o malo (por la falta de decisión a estas alturas). Pero es un fabricante oficial y su compromiso con la F1 está fuera de dudas. Quizás la llegada de Briatore como asesor ejecutivo, una especie de Helmut Marko para Luca de Meo, también desatasque alguna negociación. Carlos dijo en Barcelona que espera decidir pronto. Después de un ajetreado gran premio de casa, puede ser un buen momento para reflexionar.',
+                'fecha_publicacion' => '27-07-27',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -65,6 +67,7 @@ class NoticiaSeeder extends Seeder
                 Sin embargo, la situación de Verstappen se ha calmado desde entonces y ahora es probable que permanezca en el equipo al menos una temporada más.
 
                 Luego está Sergio Pérez. Si el trabajo de Ricciardo era poner un poco de presión sobre el mexicano para que rindiera, entonces hay algo de éxito variable.',
+                'fecha_publicacion' => '27-07-27',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -87,6 +90,7 @@ class NoticiaSeeder extends Seeder
                 En cuanto a las actualizaciones, hay una nueva carrocería en la parte delantera del sidepod con el fin de aprovechar mejor la nueva disposición de entrada en forma de P.
 
                 El equipo también ha redefinido el corte inferior, que a su vez retroalimenta la cintura y la línea de cintura, que se han elevado más desde el suelo.',
+                'fecha_publicacion' => '27-07-27',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

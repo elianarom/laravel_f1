@@ -190,6 +190,8 @@ return [
     'attributes' => [
         'titulo' => 'título',
         'descripcion' => 'descripción',
+        'escuderia_fk' => 'escudería',
+        'fecha_publicacion' => 'fecha de publicación',
     ],
 
 ];
