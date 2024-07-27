@@ -59,7 +59,7 @@
       <section class="relative mx-auto mt-32 w-full max-w-container px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:mx-32">
             <div class="md:text-center">
-                <h1 class="font-display text-3xl tracking-tight text-black sm:text-4xl">Planes de Suscripción</h1>
+                <h2 class="font-display text-3xl tracking-tight text-black sm:text-4xl">Planes de Suscripción</h2>
                 <p class="mt-4 text-lg text-slate-600">Elegí el plan de suscripción que querés contratar.</p>
             </div>
 
@@ -82,6 +82,7 @@
                 </div>
 
             </div>
+        </div>
 
     </section>
 

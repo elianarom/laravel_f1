@@ -27,6 +27,6 @@
                     </div>
                 @endforeach
             </div>
-
+        </div>
     </section>
 </x-layout>

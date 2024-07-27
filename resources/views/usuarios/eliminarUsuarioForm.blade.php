@@ -33,8 +33,6 @@
                                             <button type="submit" class="flex items-center mt-5 justify-between py-2.5 px-6 rounded-full bg-red-600 text-white text-xs lg:xs font-bold hover:bg-red-700 transition-all duration-500 mb-2 lg:mr-6 md:mb-0 md:mr-3">Confirmar</button>
                                         </form>
                                     </div>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>

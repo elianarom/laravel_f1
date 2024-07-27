@@ -29,9 +29,9 @@
                                     @empty
                                         <span>Sin categoría.</span>
                                     @endforelse
-                            <p class="text-lg font-semibold text-gray-900 mb-2 mt-5 transition-all duration-500 ">
+                            <h1 class="text-lg font-semibold text-gray-900 mb-2 mt-5 transition-all duration-500 ">
                                 {{ Str::limit($noticia->titulo, 40) }}
-                            </p>
+                            </h1>
                             <p class="text-sm truncate font-normal text-gray-500 transition-all duration-500 leading-5 mb-5">
                                 {{ $noticia->descripcion }}
                             </p>

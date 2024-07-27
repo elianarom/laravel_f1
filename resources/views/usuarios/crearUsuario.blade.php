@@ -95,7 +95,7 @@
                                         <label for="suscripcion_fk"
                                             class="block text-sm font-medium leading-6 text-gray-900">Plan de Suscripción</label>
                                             <div class="pt-2 mb-4 text-sm text-amber-500 rounded-xl bg-amber-50 font-normal" role="alert">
-                                                Para elegir tu plan de suscripción, <span class="font-semibold">primero tenés que registrate.</span></br> Una vez logueado, podrás realizar esta acción.
+                                                Para elegir tu plan de suscripción, <span class="font-semibold">primero tenés que registrate.</span><br> Una vez logueado, podrás realizar esta acción.
                                             </div>
                                         <div class="mt-2">
                                             <select id="suscripcion_fk" name="suscripcion_fk"
